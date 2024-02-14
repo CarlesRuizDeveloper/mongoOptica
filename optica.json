@@ -1,0 +1,170 @@
+{
+    "version": 1,
+    "databases": {
+      "optica": {
+        "collections": [
+          {
+            "name": "proveedores",
+            "schema": {
+              "properties": {
+                "nombre": {
+                  "bsonType": "string"
+                },
+                "direccion": {
+                  "bsonType": "object",
+                  "properties": {
+                    "calle": {
+                      "bsonType": "string"
+                    },
+                    "numero": {
+                      "bsonType": "int"
+                    },
+                    "piso": {
+                      "bsonType": "int"
+                    },
+                    "puerta": {
+                      "bsonType": "string"
+                    },
+                    "ciudad": {
+                      "bsonType": "string"
+                    },
+                    "codigoPostal": {
+                      "bsonType": "string"
+                    },
+                    "pais": {
+                      "bsonType": "string"
+                    }
+                  }
+                },
+                "telefono": {
+                  "bsonType": "string"
+                },
+                "fax": {
+                  "bsonType": "string"
+                },
+                "nif": {
+                  "bsonType": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "gafas",
+            "schema": {
+              "properties": {
+                "marca": {
+                  "bsonType": "string"
+                },
+                "graduacion": {
+                  "bsonType": "object",
+                  "properties": {
+                    "izquierdo": {
+                      "bsonType": "double"
+                    },
+                    "derecho": {
+                      "bsonType": "double"
+                    }
+                  }
+                },
+                "tipoMontura": {
+                  "bsonType": "string"
+                },
+                "colorMontura": {
+                  "bsonType": "string"
+                },
+                "colorCristales": {
+                  "bsonType": "object",
+                  "properties": {
+                    "izquierdo": {
+                      "bsonType": "string"
+                    },
+                    "derecho": {
+                      "bsonType": "string"
+                    }
+                  }
+                },
+                "precio": {
+                  "bsonType": "double"
+                }
+              }
+            }
+          },
+          {
+            "name": "clientes",
+            "schema": {
+              "properties": {
+                "nombre": {
+                  "bsonType": "string"
+                },
+                "direccion": {
+                  "bsonType": "object",
+                  "properties": {
+                    "calle": {
+                      "bsonType": "string"
+                    },
+                    "numero": {
+                      "bsonType": "int"
+                    },
+                    "piso": {
+                      "bsonType": "int"
+                    },
+                    "puerta": {
+                      "bsonType": "string"
+                    },
+                    "ciudad": {
+                      "bsonType": "string"
+                    },
+                    "codigoPostal": {
+                      "bsonType": "string"
+                    },
+                    "pais": {
+                      "bsonType": "string"
+                    }
+                  }
+                },
+                "telefono": {
+                  "bsonType": "string"
+                },
+                "correoElectronico": {
+                  "bsonType": "string"
+                },
+                "fechaRegistro": {
+                  "bsonType": "date"
+                },
+                "recomendadoPor": {
+                  "bsonType": "objectId",
+                  "ref": "clientes"
+                }
+              }
+            }
+          },
+          {
+            "name": "ventas",
+            "schema": {
+              "properties": {
+                "cliente": {
+                  "bsonType": "objectId",
+                  "ref": "clientes"
+                },
+                "gafas": {
+                  "bsonType": "objectId",
+                  "ref": "gafas"
+                },
+                "empleado": {
+                  "bsonType": "objectId",
+                  "ref": "empleados"
+                },
+                "fechaVenta": {
+                  "bsonType": "date"
+                },
+                "horaVenta": {
+                  "bsonType": "date"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  
